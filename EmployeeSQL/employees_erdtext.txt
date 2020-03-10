@@ -1,0 +1,48 @@
+departments
+-
+id SERIAL
+dept_no VARCHAR PK
+dept_name VARCHAR
+
+
+dept_emp
+--
+id SERIAL PK
+emp_no VARCHAR FK >- employees.emp_no
+dept_no VARCHAR FK >- departments.dept_no
+from_date DATE
+to_date DATE
+
+dept_manager
+-
+id SERIAL PK
+dept_no VARCHAR FK >- departments.dept_no
+emp_no VARCHAR FK >- employees.emp_no
+from_date DATE
+to_date DATE
+
+employees
+-
+id SERIAL
+emp_no VARCHAR PK
+birth_date DATE
+first_name VARCHAR
+last_name VARCHAR
+gender VARCHAR
+hire_date DATE
+
+salaries
+-
+id SERIAL PK
+emp_no VARCHAR FK >- employees.emp_no
+salary INT
+from_date DATE
+to_date DATE
+
+titles
+-
+id SERIAL PK
+emp_no  VARCHAR FK >- employees.emp_no
+title VARCHAR
+from_date DATE
+to_date DATE
